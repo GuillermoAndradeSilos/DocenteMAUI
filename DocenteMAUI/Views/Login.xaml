@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvvm="clr-namespace:DocenteMAUI.ViewModels"
+             x:Class="DocenteMAUI.Views.Login" BackgroundColor="White"
+             x:DataType="mvvm:LoginViewModel">
+    <ScrollView Margin="0,10,0,0">
+        <VerticalStackLayout>
+            <StackLayout WidthRequest="400" Orientation="Vertical" HorizontalOptions="Center">
+                <Image WidthRequest="300" Source="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/SEP_Logo_2019.svg/1200px-SEP_Logo_2019.svg.png"></Image>
+                <Border Margin="10" WidthRequest="500" HeightRequest="10"  BackgroundColor="#9d2449"></Border>
+                <Label Margin="40,0,0,0"  FontFamily="Impact" HorizontalOptions="Center" TextColor="Black" FontSize="30" Text="Sistema de gestión de calificaciones para Nivel Basico"></Label>
+                <Label  Margin="20" FontFamily="Arial black" TextColor="Black"  HorizontalOptions="CenterAndExpand" FontSize="25">Inicio de Sesion</Label>
+                <Entry Text="{Binding UsuarioLogin.Usuario1}" FontSize="20" TextColor="#9d2449" HorizontalTextAlignment="Center" Placeholder="Ingresa tu nombre de usuario" Background="#d9d9d9" ></Entry>
+                <Label Margin="10" FontFamily="Arial black"  HorizontalOptions="CenterAndExpand" FontSize="25">Contraseña</Label>
+                <Entry Text="{Binding UsuarioLogin.Contraseña}" IsPassword="True" FontSize="20" TextColor="#9d2449" HorizontalTextAlignment="Center" Background="#d9d9d9" ></Entry>
+                <Label TextColor="Red" Text="{Binding Mensaje}" Margin="10" FontFamily="Arial black"  HorizontalOptions="CenterAndExpand" FontSize="25"></Label>
+                <Button Margin="0,5,0,0" Command="{Binding IniciarSesionCommand}" TextColor="White" HeightRequest="50" WidthRequest="150"  FontSize="Large" Background="#9d2449" Text="Entrar"></Button>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

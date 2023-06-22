@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DocenteMAUI.Views.VerCalificacionView"
+             xmlns:mvvm="clr-namespace:DocenteMAUI.ViewModels"
+             xmlns:model="clr-namespace:DocenteMAUI.Models"
+             x:DataType="mvvm:MainViewModel" BackgroundColor="White">
+    <VerticalStackLayout Background="LightGray" >
+        <StackLayout Background="LightYellow" Margin="5">
+            <Label Margin="2" HorizontalTextAlignment="Center" FontSize="30" TextColor="Orange" Text="{Binding MateriaSelect.nombre}"></Label>
+            <!--<Image HorizontalOptions="Center" WidthRequest="40" Source="matematicas"></Image>-->
+        </StackLayout>
+        <StackLayout>
+            <CollectionView ItemsSource="{Binding Calificaciones}" SelectionMode="Single"
+                                WidthRequest="300" HeightRequest="400" HorizontalOptions="Center"
+                                VerticalOptions="Center">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="2"></GridItemsLayout>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <HorizontalStackLayout Margin="10" HorizontalOptions="Center">
+                                <HorizontalStackLayout>
+                                    <StackLayout Margin="2">
+                                        <StackLayout>
+                                            <HorizontalStackLayout>
+                                                <Label TextColor="#9d2449" FontSize="20">Unidad</Label>
+                                                <Label x:DataType="model:Calificacion" FontSize="20" Margin="10,0,0,0" TextColor="Black" Text="{Binding unidad}"></Label>
+                                                
+                                            </HorizontalStackLayout>
+                                           
+                                        </StackLayout>
+                                        <StackLayout>
+                                            <HorizontalStackLayout>
+                                                <Label TextColor="#9d2449" FontSize="20">Calificacion</Label>
+                                                <Label x:DataType="model:Calificacion" FontSize="15" Margin="10,0,10,0" HorizontalTextAlignment="Center"  TextColor="Black" Text="{Binding calificacion1}"></Label>
+
+                                            </HorizontalStackLayout>
+                                            <Border></Border>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </HorizontalStackLayout>
+                            </HorizontalStackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <HorizontalStackLayout>
+                <StackLayout>
+                    <Label HorizontalOptions="Center" TextColor="Black" FontSize="20">Comentario:</Label>
+                    <Label HorizontalOptions="Center" Background="White" WidthRequest="350" HeightRequest="100" FontSize="11" Margin="0,0,0,0" TextColor="Black" Text="{Binding Comentario}"></Label>
+                </StackLayout>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Margin="10" HorizontalOptions="Center">
+                <Button Command="{Binding NavegarCalificacionesCommand}" Margin="2" CommandParameter="AgregarCalificacionView" Background="#9d2449" TextColor="White" Text="Agregar"></Button>
+                <Button Command="{Binding NavegarCommand}"  Margin="2" CommandParameter="CalificacionesView" Background="#9d2449" TextColor="White" Text="Regresar"></Button>
+                
+            </HorizontalStackLayout>
+            <Border></Border>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

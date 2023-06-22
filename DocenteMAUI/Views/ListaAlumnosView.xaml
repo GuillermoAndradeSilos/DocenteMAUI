@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvvm="clr-namespace:DocenteMAUI.ViewModels"
+             xmlns:model="clr-namespace:DocenteMAUI.Models"
+             x:Class="DocenteMAUI.Views.ListaAlumnosView" BackgroundColor="White"
+             x:DataType="mvvm:MainViewModel">
+    <ScrollView Margin="0,10,0,0" HorizontalOptions="Center" Orientation="Vertical">
+        <VerticalStackLayout>
+            <Label HorizontalOptions="Center" TextColor="#9d2449" FontSize="40">Lista de alumnos</Label>
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Button Command="{Binding NavegarPadreCommand}" Margin="1" WidthRequest="140"  CommandParameter="ListaTutorView" Background="#9d2449" TextColor="White"  Text="Gestionar Tutor"></Button>
+                <Button Command="{Binding VerAsistenciasCommand}" Margin="1" CommandParameter="AsistenciasAlumnoView" Background="#9d2449" TextColor="White"  Text="Asistencias"></Button>
+            </HorizontalStackLayout>
+            <Border Margin="10" WidthRequest="500" HeightRequest="10"  BackgroundColor="#9d2449"></Border>
+            <VerticalStackLayout Margin="0,0,0,0" HorizontalOptions="Center" VerticalOptions="Center">
+                <CollectionView ItemsSource="{Binding Alumnos}" SelectedItem="{Binding AlumnoSelect}" SelectionMode="Single"
+                                WidthRequest="300" HeightRequest="400" HorizontalOptions="Center"
+                                VerticalOptions="Center">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="2"></GridItemsLayout>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <StackLayout Background="LightGray">
+                                    <HorizontalStackLayout>
+                                        <StackLayout>
+                                            <Label TextColor="rED" Text="Nombre:"></Label>
+                                            <Label x:DataType="model:Alumno" Text="{Binding nombre}" TextColor="Black" FontFamily="MutterKrauseBuch" HorizontalTextAlignment="Center" />
+                                            <Border></Border>
+
+                                        </StackLayout>
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout>
+                                        <StackLayout>
+                                            <Label TextColor="Red" Text="Direccion"></Label>
+                                            <Label x:DataType="model:Alumno" TextColor="Black"  Text="{Binding direccion}"></Label>
+                                            <Border></Border>
+
+                                        </StackLayout>
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout>
+                                        <StackLayout>
+                                            <Label TextColor="Red" Text="CURP:"></Label>
+                                            <Label x:DataType="model:Alumno"  Text="{Binding curp}" TextColor="Black"  FontFamily="MutterKrauseBuch" HorizontalTextAlignment="Center" />
+
+                                        </StackLayout>
+                                    </HorizontalStackLayout>
+                                </StackLayout>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    <CollectionView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NavegarCommand}" CommandParameter="CalificacionesView" NumberOfTapsRequired="2"></TapGestureRecognizer>
+                    </CollectionView.GestureRecognizers>
+                </CollectionView>
+            </VerticalStackLayout>
+            <StackLayout >
+                <HorizontalStackLayout Margin="10" HorizontalOptions="Center" >
+                    <Button Command="{Binding NavegarCommand}" TextColor="White" Margin="1" CommandParameter="AgregarAlumnoView" Background="#9d2449"  Text="Agregar"></Button>
+                    <Button Command="{Binding NavegarCommand}" TextColor="White" Margin="1"  CommandParameter="EditarAlumnoView" Background="#9d2449"  Text="Editar"></Button>
+                    <Button Command="{Binding EliminarCommand}" TextColor="White" Margin="1"  Background="#9d2449"  Text="Eliminar"></Button>
+                   
+                </HorizontalStackLayout>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

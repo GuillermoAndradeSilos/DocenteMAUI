@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DocenteMAUI.Views.EditarCalificacionView" BackgroundColor="DarkSlateGray">
+    <ScrollView Margin="0,10,0,0">
+        <VerticalStackLayout>
+            <StackLayout WidthRequest="400" Orientation="Vertical" HorizontalOptions="Center">
+                <Label HorizontalOptions="Center" TextColor="#9d2449" FontSize="30">Editar Calificaciones</Label>
+                <Border Margin="10" WidthRequest="500" HeightRequest="10"  BackgroundColor="#9d2449"></Border>
+                <Label>Alumno:</Label>
+                <Label>Grupo:</Label>
+                <Border Margin="10" WidthRequest="500" HeightRequest="10"  BackgroundColor="#9d2449"></Border>
+                <Label  FontSize="30" HorizontalOptions="Center">MATEMATICAS</Label>
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <StackLayout Margin="10" HorizontalOptions="Center">
+                        <Label>Unidad 1</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                    <StackLayout  Margin="10"  HorizontalOptions="Center">
+                        <Label>Unidad 2</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                    <StackLayout  Margin="10"  HorizontalOptions="Center">
+                        <Label>Unidad 3</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                    <StackLayout  Margin="10"  HorizontalOptions="Center">
+                        <Label>Unidad 4</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                    <StackLayout  Margin="10"  HorizontalOptions="Center">
+                        <Label>Unidad 5</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                </HorizontalStackLayout>
+                <Label  FontSize="30" HorizontalOptions="Center">HISTORIA</Label>
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <StackLayout Margin="10" HorizontalOptions="Center">
+                        <Label>Unidad 1</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                    <StackLayout  Margin="10"  HorizontalOptions="Center">
+                        <Label>Unidad 2</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                    <StackLayout  Margin="10"  HorizontalOptions="Center">
+                        <Label>Unidad 3</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                    <StackLayout  Margin="10"  HorizontalOptions="Center">
+                        <Label>Unidad 4</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                    <StackLayout  Margin="10"  HorizontalOptions="Center">
+                        <Label>Unidad 5</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                </HorizontalStackLayout>
+                <Label  FontSize="30" HorizontalOptions="Center">CIENCIAS NATURALES</Label>
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <StackLayout Margin="10" HorizontalOptions="Center">
+                        <Label>Unidad 1</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                    <StackLayout  Margin="10"  HorizontalOptions="Center">
+                        <Label>Unidad 2</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                    <StackLayout  Margin="10"  HorizontalOptions="Center">
+                        <Label>Unidad 3</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                    <StackLayout  Margin="10"  HorizontalOptions="Center">
+                        <Label>Unidad 4</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                    <StackLayout  Margin="10"  HorizontalOptions="Center">
+                        <Label>Unidad 5</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                </HorizontalStackLayout>
+                <Label  FontSize="30" HorizontalOptions="Center">ESPAÑOL</Label>
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <StackLayout Margin="10" HorizontalOptions="Center">
+                        <Label>Unidad 1</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                    <StackLayout  Margin="10"  HorizontalOptions="Center">
+                        <Label>Unidad 2</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                    <StackLayout  Margin="10"  HorizontalOptions="Center">
+                        <Label>Unidad 3</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                    <StackLayout  Margin="10"  HorizontalOptions="Center">
+                        <Label>Unidad 4</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                    <StackLayout  Margin="10"  HorizontalOptions="Center">
+                        <Label>Unidad 5</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                </HorizontalStackLayout>
+                <Label  FontSize="30" HorizontalOptions="Center">GEOGRAFIA</Label>
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <StackLayout Margin="10" HorizontalOptions="Center">
+                        <Label>Unidad 1</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                    <StackLayout  Margin="10"  HorizontalOptions="Center">
+                        <Label>Unidad 2</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                    <StackLayout  Margin="10"  HorizontalOptions="Center">
+                        <Label>Unidad 3</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                    <StackLayout  Margin="10"  HorizontalOptions="Center">
+                        <Label>Unidad 4</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                    <StackLayout  Margin="10"  HorizontalOptions="Center">
+                        <Label>Unidad 5</Label>
+                        <Entry HorizontalTextAlignment="Center" Placeholder="0" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                    </StackLayout>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Margin="10" HorizontalOptions="Center">
+                    <Button Background="#9d2449"  Text="Editar Calificaciones"></Button>
+                </HorizontalStackLayout>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

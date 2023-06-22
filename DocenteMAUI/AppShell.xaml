@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="DocenteMAUI.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DocenteMAUI"
+    xmlns:views="clr-namespace:DocenteMAUI.Views"
+    Shell.FlyoutBehavior="Disabled">
+<!-- A;adir lel viewmodel probablemente maneje mas de 1 no se, pero a;adir el principal -->
+    <FlyoutItem FlyoutItemIsVisible="False">
+        <ShellContent Route="Login">
+            <views:Login></views:Login>
+        </ShellContent>
+    </FlyoutItem>
+    <FlyoutItem Title="ListaAlumnosView" FlyoutItemIsVisible="False">
+        <ShellContent Route="ListaAlumnosView">
+            <views:ListaAlumnosView></views:ListaAlumnosView>
+        </ShellContent>
+    </FlyoutItem>
+    <FlyoutItem Title="EditarCalificacionView" FlyoutItemIsVisible="False">
+        <ShellContent Route="EditarCalificacionView">
+            <views:EditarCalificacionView></views:EditarCalificacionView>
+        </ShellContent>
+    </FlyoutItem>
+    <FlyoutItem Title="EditarAlumnoView" FlyoutItemIsVisible="False">
+        <ShellContent Route="EditarAlumnoView">
+            <views:EditarAlumnoView></views:EditarAlumnoView>
+        </ShellContent>
+    </FlyoutItem>
+    <FlyoutItem Title="CalificacionesView" FlyoutItemIsVisible="False">
+        <ShellContent Route="CalificacionesView">
+            <views:CalificacionesView></views:CalificacionesView>
+        </ShellContent>
+    </FlyoutItem>
+    <FlyoutItem Title="AgregarCalificacionView" FlyoutItemIsVisible="False">
+        <ShellContent Route="AgregarCalificacionView">
+            <views:AgregarCalificacionView></views:AgregarCalificacionView>
+        </ShellContent>
+    </FlyoutItem>
+    <FlyoutItem Title="VerCalificacionView" FlyoutItemIsVisible="False">
+        <ShellContent Route="VerCalificacionView">
+            <views:VerCalificacionView></views:VerCalificacionView>
+        </ShellContent>
+    </FlyoutItem>
+    <FlyoutItem Title="AgregarAlumnoView" FlyoutItemIsVisible="False">
+        <ShellContent Route="AgregarAlumnoView">
+            <views:AgregarAlumnoView></views:AgregarAlumnoView>
+        </ShellContent>
+    </FlyoutItem>
+    <FlyoutItem Title="AgregarTutorView" FlyoutItemIsVisible="False">
+        <ShellContent Route="AgregarTutorView">
+            <views:AgregarTutorView></views:AgregarTutorView>
+        </ShellContent>
+    </FlyoutItem>
+    <FlyoutItem Title="EditarTutorView" FlyoutItemIsVisible="False">
+        <ShellContent Route="EditarTutorView">
+            <views:EditarTutorView></views:EditarTutorView>
+        </ShellContent>
+    </FlyoutItem>
+    <FlyoutItem Title="ListaTutorView" FlyoutItemIsVisible="False">
+        <ShellContent Route="ListaTutorView">
+            <views:ListaTutorView></views:ListaTutorView>
+        </ShellContent>
+    </FlyoutItem>
+    <FlyoutItem Title="AsistenciasAlumnoView" FlyoutItemIsVisible="False">
+        <ShellContent Route="AsistenciasAlumnoView">
+            <views:AsistenciasAlumnoView></views:AsistenciasAlumnoView>
+        </ShellContent>
+    </FlyoutItem>
+    <FlyoutItem Title="AgregarAsistencia" FlyoutItemIsVisible="False">
+        <ShellContent Route="AgregarAsistencia">
+            <views:AgregarAsistencia></views:AgregarAsistencia>
+        </ShellContent>
+    </FlyoutItem>
+    <FlyoutItem Title="EditarAsistencia" FlyoutItemIsVisible="False">
+        <ShellContent Route="EditarAsistencia">
+            <views:EditarAsistencia></views:EditarAsistencia>
+        </ShellContent>
+    </FlyoutItem>
+</Shell>

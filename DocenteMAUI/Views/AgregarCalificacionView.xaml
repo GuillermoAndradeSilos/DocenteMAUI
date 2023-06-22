@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvvm="clr-namespace:DocenteMAUI.ViewModels"
+             xmlns:model="clr-namespace:DocenteMAUI.Models"
+             x:Class="DocenteMAUI.Views.AgregarCalificacionView" x:DataType="mvvm:MainViewModel" BackgroundColor="DarkSlateGray">
+    <ScrollView Margin="0,10,0,0">
+        <VerticalStackLayout>
+            <StackLayout WidthRequest="400" Orientation="Vertical" HorizontalOptions="Center">
+                <Label HorizontalOptions="Center" TextColor="#9d2449" FontSize="30">Agregar Calificaciones</Label>
+                <Border Margin="10" WidthRequest="500" HeightRequest="10"  BackgroundColor="#9d2449"></Border>
+                <Label  Text="{Binding AlumnoSelect.nombre}"></Label>
+                <Label Text="{Binding AlumnoSelect.curp}"></Label>
+                <Border Margin="10" WidthRequest="500" HeightRequest="10"  BackgroundColor="#9d2449"></Border>
+                <Label x:DataType="model:Asignatura" FontSize="30" HorizontalOptions="Center" Text="{Binding nombre}"></Label>
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <StackLayout Margin="10" HorizontalOptions="Center">
+                        <Label Text="Unidad: "></Label>
+                        <Entry Text="{Binding CalificacionSelect.unidad}" HorizontalTextAlignment="Center" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                        <Label Text="Calificación: "></Label>
+                        <Entry Text="{Binding CalificacionSelect.calificacion1}" HorizontalTextAlignment="Center" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Numeric" ></Entry>
+                        <Label Text="Comentario: "></Label>
+                        <Entry Text="{Binding Comentario}" HorizontalTextAlignment="Center" FontSize="20" MaximumHeightRequest="10" MaximumWidthRequest="10" Keyboard="Text" ></Entry>
+                    </StackLayout>
+                </HorizontalStackLayout>
+                <Label Text="{Binding Error}"></Label>
+                <HorizontalStackLayout Margin="10" HorizontalOptions="Center">
+                    <Button Command="{Binding GuardarCalificacionesCommand}" Background="#9d2449" Text="Agregar Calificación"></Button>
+                    <Button Command="{Binding NavegarCalificacionesCommand}" CommandParameter="CalificacionesView" Background="#9d2449" Text="Cancelar"></Button>
+                </HorizontalStackLayout>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

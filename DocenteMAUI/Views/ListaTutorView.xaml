@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DocenteMAUI.Views.ListaTutorView"
+             xmlns:mvvm="clr-namespace:DocenteMAUI.ViewModels"
+             xmlns:model="clr-namespace:DocenteMAUI.Models"
+             x:DataType="mvvm:MainViewModel" BackgroundColor="DarkSlateGray">
+    <ScrollView Margin="0,10,0,0" HorizontalOptions="Center" Orientation="Vertical">
+        <VerticalStackLayout>
+            <Label HorizontalOptions="Center" TextColor="#9d2449" FontSize="30">Lista de todos los tutores</Label>
+            <Border Margin="10" WidthRequest="500" HeightRequest="10"  BackgroundColor="#9d2449"></Border>
+            <VerticalStackLayout Margin="0,0,0,0" HorizontalOptions="Center" VerticalOptions="Center">
+                <CollectionView ItemsSource="{Binding Tutores}" SelectedItem="{Binding TutorSelect}" SelectionMode="Single"
+                                WidthRequest="300" HeightRequest="400" HorizontalOptions="Center"
+                                VerticalOptions="Center">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="2"></GridItemsLayout>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <StackLayout>
+                                    <Label x:DataType="model:Tutor" Text="{Binding nombre}" TextColor="#EDEEFF" FontFamily="MutterKrauseBuch" HorizontalTextAlignment="Center" />
+                                    <Label x:DataType="model:Tutor" Text="{Binding direccion}"></Label>
+                                    <Label x:DataType="model:Tutor" Text="{Binding telefono}" TextColor="White" FontFamily="MutterKrauseBuch" HorizontalTextAlignment="Center" />
+                                </StackLayout>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+            <HorizontalStackLayout Margin="10" HorizontalOptions="Center">
+                <Button Command="{Binding NavegarPadreCommand}" CommandParameter="AgregarTutorView" Background="#9d2449" TextColor="Black" Text="Agregar"></Button>
+                <Button Command="{Binding NavegarPadreCommand}" CommandParameter="EditarTutorView" Background="#9d2449" TextColor="Black" Text="Editar"></Button>
+                <Button Command="{Binding EliminarTutorCommand}" Background="#9d2449" TextColor="Black" Text="Eliminar"></Button>
+                <Button Command="{Binding NavegarCommand}" CommandParameter="ListaAlumnosView" Background="#9d2449" TextColor="Black" Text="Regresar"></Button>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

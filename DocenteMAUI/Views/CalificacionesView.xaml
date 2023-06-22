@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvvm="clr-namespace:DocenteMAUI.ViewModels"
+             xmlns:model="clr-namespace:DocenteMAUI.Models"
+             x:Class="DocenteMAUI.Views.CalificacionesView" x:DataType="mvvm:MainViewModel" BackgroundColor="White">
+    <ScrollView Margin="0,10,0,0">
+        <VerticalStackLayout>
+            <StackLayout WidthRequest="400" Orientation="Vertical" HorizontalOptions="Center">
+                <Label HorizontalOptions="Center" TextColor="#9d2449" FontSize="30">Calificaciones</Label>
+                <Border Margin="10" WidthRequest="500" HeightRequest="10"  BackgroundColor="#9d2449"></Border>
+                <HorizontalStackLayout>
+                    <Label HorizontalOptions="Center" Margin="65,0,0,0" TextColor="Black" Text="Nombre del Alumno: "></Label>
+                    <Label TextColor="Black"  Text="{Binding AlumnoSelect.nombre}"></Label>
+                </HorizontalStackLayout>
+                <CollectionView ItemsSource="{Binding Materias}" SelectionMode="Single"
+                                WidthRequest="300" HeightRequest="400" HorizontalOptions="Center"
+                                VerticalOptions="Center">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="2"></GridItemsLayout>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <StackLayout>
+                                    <Border Margin="10" WidthRequest="500" HeightRequest="10"  BackgroundColor="#b28e5c"></Border>
+                                    <Label x:DataType="model:Asignatura" FontSize="20" TextColor="Black" HorizontalOptions="Center" Text="{Binding nombre}">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type CollectionView}},Path=BindingContext.NavegarCalificacionesCommand}" CommandParameter="{Binding nombre}" NumberOfTapsRequired="2"></TapGestureRecognizer>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <CollectionView ItemsSource="{Binding Calificaciones}" SelectionMode="Single" HorizontalOptions="Center" VerticalOptions="Center">
+                                        <CollectionView.ItemsLayout>
+                                            <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="2"></GridItemsLayout>
+                                        </CollectionView.ItemsLayout>
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <HorizontalStackLayout>
+                                                        <StackLayout Margin="2">
+                                                            <Label x:DataType="model:Calificacion" FontSize="11" Margin="0,0,0,0" TextColor="Black" Text="{Binding unidad}"></Label>
+                                                            <Label x:DataType="model:Calificacion" FontSize="15" Margin="0,0,10,0" HorizontalTextAlignment="Center"  TextColor="Black" Text="{Binding calificacion1}"></Label>
+                                                        </StackLayout>
+                                                    </HorizontalStackLayout>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                </StackLayout>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <HorizontalStackLayout Margin="10" HorizontalOptions="Center">
+                    <Button Command="{Binding NavegarCommand}" Margin="2" CommandParameter="ListaAlumnosView" Background="#9d2449" TextColor="White"  Text="Regresar"></Button>
+                    <Button Command="{Binding GenerarReporteCommand}" Margin="2" Background="#9d2449" TextColor="White"  Text="Reporte reprobados"></Button>
+                </HorizontalStackLayout>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

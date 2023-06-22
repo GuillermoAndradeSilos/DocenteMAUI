@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DocenteMAUI.Views.AsistenciasAlumnoView"
+             xmlns:mvvm="clr-namespace:DocenteMAUI.ViewModels"
+             xmlns:model="clr-namespace:DocenteMAUI.Models"
+             x:DataType="mvvm:MainViewModel" BackgroundColor="White">
+    <StackLayout Margin="0,0,0,0" HorizontalOptions="Center" >
+        <StackLayout>
+            <Label HorizontalOptions="Center" FontSize="30" TextColor="Black">ASISTENCIAS</Label>
+            <HorizontalStackLayout Background="LightGray" Margin="10">
+                <Label TextColor="#9d2449" Padding="4" FontSize="15" Text="Nombre del ALUMNO: "></Label>
+                <Label TextColor="Black" Padding="4" FontSize="15" Text="{Binding AlumnoSelect.nombre}"  FontFamily="MutterKrauseBuch" HorizontalTextAlignment="Center" />
+            </HorizontalStackLayout>
+        </StackLayout>
+        <CollectionView ItemsSource="{Binding Asistencias}" SelectedItems="{Binding AsistenciaSelect}" SelectionMode="Single"
+                                WidthRequest="300" HeightRequest="400" HorizontalOptions="Center"
+                                VerticalOptions="Center">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="2"></GridItemsLayout>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid BackgroundColor="LightGray">
+                        <HorizontalStackLayout HorizontalOptions="Center">
+                            <Label  FontSize="15" Text="Fecha: " TextColor="#9d2449" FontFamily="MutterKrauseBuch" HorizontalTextAlignment="Center" />
+                            <Label  FontSize="15" x:DataType="model:Asistencias" Text="{Binding fecha}" TextColor="Green" FontFamily="MutterKrauseBuch" HorizontalTextAlignment="Center" />
+                            <Label  FontSize="15" TextColor="#9d2449" Text="Asistencia: "></Label>
+                            <Label  FontSize="15" x:DataType="model:Asistencias" TextColor="Black" Text="{Binding asistio}"></Label>
+                        </HorizontalStackLayout>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <HorizontalStackLayout Margin="10" HorizontalOptions="Center">
+            <Button Command="{Binding VerAsistenciasCommand}" CommandParameter="AgregarAsistencia" Background="#9d2449" Margin="2" TextColor="White" Text="Agregar"></Button>
+            <Button Command="{Binding VerAsistenciasCommand}" CommandParameter="EditarAsistencia" Background="#9d2449" Margin="2" TextColor="White" Text="Editar"></Button>
+            <Button Command="{Binding NavegarCommand}" Margin="2" CommandParameter="ListaAlumnosView" Background="#9d2449" TextColor="White"  Text="Regresar"></Button>
+        </HorizontalStackLayout>
+    </StackLayout>
+</ContentPage>
